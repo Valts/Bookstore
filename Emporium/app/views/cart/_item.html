@@ -1,0 +1,5 @@
+<%= link_to item.book.title, :action => "show",
+:controller => "catalog", :id => item.book.id %>
+<%= pluralize(item.amount, "pc", "pcs") %>,
+$<%= item.price * item.amount %>
+<span class="remove-book-link"><%= remove_book_link("(-)", item.book) %></span>

@@ -1,0 +1,28 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  language: "Language"
+  authors: "Authors"
+  publishers: "Publishers"
+  books: "Books"
+  catalog: "Catalog"
+  about: "Contacts"
+  orders: "Orders"
+  about_emporium: "About Emporium"
+  price: "Price"
+  publisher: "Publisher"
+  page: "page"
+  listing_books: "Listing books"
+  book_was_successfully_created: "Book was successfully created."
+  book_was_successfully_updated: "Book was successfully updated."
+  yourshoppingcart: "Your Shopping Cart"
+  proceedtocheckout: "Proceed to Checkout"
+  total: "Total"
+  booklist: "Book List"
+  foundResults: "Found results"
+  date:
+    order:
+      - :day
+      - :month
+      - :year

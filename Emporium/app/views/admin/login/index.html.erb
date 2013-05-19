@@ -1,0 +1,8 @@
+<h1>Admin login</h1>
+<%= form_tag( { :action => 'login'}, :multipart => true ) do %>
+    <p><label for="book_price">Login</label><br/>
+      <%= text_field 'book', 'page_count' %></p>
+    <p><label for="book_price">Password</label><br/>
+      <%= text_field 'book', 'page_count' %></p>
+    <%= submit_tag 'Login' %>
+<% end %>
