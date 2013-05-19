@@ -1,8 +1,8 @@
 Emporium::Application.routes.draw do
 
-  #get "login/index"
+  get "login/index"
 
-  #get "login/login"
+  get "login/login"
 
   get "order/index"
 

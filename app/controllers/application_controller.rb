@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :set_locale
+  #before_filter :authenticate
   helper :all # include all helpers, all the time
   protect_from_forgery :only => [:create, :update, :destroy]
   private
@@ -27,9 +28,10 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-  def admin_required
+  def authenticate
+
     authenticate_or_request_with_http_basic do |user_name, password|
       user_name == 'admin' && password == 'admin'
-    end if RAILS_ENV == 'production' || params[:admin_http]
+    end
   end
 end
