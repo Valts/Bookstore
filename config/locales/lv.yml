@@ -1,0 +1,34 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+lv:
+  language: "Valoda"
+  authors: "Autori"
+  publishers: "Izdevēji"
+  books: "Grāmatas"
+  catalog: "Katalogs"
+  about: "Kontakti"
+  orders: "Pasūtījumi"
+  about_emporium: "Par Emporium"
+  price: "Cena"
+  publisher: "Izdevniecība"
+  page: "lapa"
+  listing_books: "Grāmatu saraksts"
+  book_was_successfully_created: "Grāmata ir veiksmīgi izveidota."
+  book_was_successfully_updated: "Grāmata ir veiksmīgi labota."
+  yourshoppingcart: "Jūsu iepirkumu grozs"
+  proceedtocheckout: "Samaksāt"
+  total: "Kopā"
+  booklist: "Grāmatu saraksts"
+  foundResults: "Atrastie rezultāti"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+
+#  date:
+#    order:
+#      - :day
+#      - :month
+#      - :year

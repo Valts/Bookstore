@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title><%= @page_title || 'Emporium' %></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+    <div id="header">
+        <img style="margin-left: 20px; float:left" width="90px" height="90px" alt="Emporium" src="/assets/logo.png">
+        <span id="langmenu">
+            <%= t :language %>:
+            <a href="<%= "#{request.url.split('?').first()}?locale=en" %>"><img alt="ENG" src="/assets/flag_en.jpg"/></a>
+            <a href="<%= "#{request.url.split('?').first()}?locale=lv" %>"><img alt="LV" src="/assets/flag_lv.jpg"/></a>
+        </span>
+      <h1 id="logo">Emporium&trade;</h1>
+      <h2 id="slogan">Books on Rails</h2>
+      <div style="margin-top:-20px; float: right">
+        <form action="/catalog/search" accept-charset="UTF-8" method="get" id="search-form">
+          <input type="text" name="text" id="text" size="20"/>
+          <button type="submit">Meklēt</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="menu" style="text-align: center;">
+      <ul>
+        <li>
+          <a href="/admin/author">
+            <div class="menuitem">
+              <%= t :authors %>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/admin/publishers">
+            <div class="menuitem">
+              <%= t :publishers %>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/admin/books">
+            <div class="menuitem">
+              <%= t :books %>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/catalog/index">
+            <div class="menuitem">
+              <%= t :catalog %>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/admin/order">
+            <div class="menuitem">
+              <%= t :orders%>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/about">
+            <div class="menuitem">
+              <%= t :about%>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/admin/login">
+            <div class="menuitem">
+              Admin
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+<div id="content">
+  <%= "<h1>#{@page_title}</h1>".html_safe if @page_title %>
+  <% if flash[:notice] %>
+      <div id="notice">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+  <%= yield %>
+</div>
+<% if @cart %>
+    <div id="shopping_cart">
+      <%= render :partial => "cart/cart" %>
+    </div>
+    <%= drop_receiving_element("shopping_cart", :url =>
+    { :controller => "cart", :action => "add" }) %>
+<% end %>
+<div id="footer">
+  &copy; 2013 Emporium
+</div>
+</body>
+</html>
